@@ -13,13 +13,12 @@ mutex g_lock;
 
 void func()
 {
-    g_lock.lock();
+    lock_guard<mutex> locker(g_lock);
     for (int i = 0; i < 20; i++)
     {
         cout << i << " ";
     }
     cout << endl;
-    g_lock.unlock();
     this_thread::sleep_for(chrono::seconds(1));
 }
 
