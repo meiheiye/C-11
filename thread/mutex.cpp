@@ -13,7 +13,7 @@ mutex g_lock;
 
 void func()
 {
-    lock_guard<mutex> locker(g_lock);
+    lock_guard<mutex> locker(g_lock); // 使用RAII机制
     for (int i = 0; i < 20; i++)
     {
         cout << i << " ";
